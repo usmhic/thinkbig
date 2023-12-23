@@ -1,4 +1,4 @@
-# ThinkBig - Projet de Collecte de Données avec Raspberry Pi, DHT22, Blockchain, API FastAPI
+# ThinkBig - Projet de Collecte de Données avec Raspberry Pi, DHT22, Blockchain, API
 
 ## Description
 
@@ -40,23 +40,3 @@ thinkbig/
 ## Utilisation de l'API FastAPI
 
 - Accédez à l'API FastAPI à l'adresse [http://localhost:8000/data](http://localhost:8000/data) pour récupérer les dernières données stockées.
-
-## Contribution au Projet
-
-Si vous souhaitez contribuer, créez une nouvelle branche, effectuez vos modifications, puis soumettez une demande de tirage. Toutes les contributions sont les bienvenues !
-
-## Auteur
-
-[Votre Nom]
-
-## Documentation
-
-Consultez la documentation complète du projet pour plus de détails.
-
-## License
-
-Ce projet est sous licence [MIT License](LICENSE).
-
----
-
-**Note :** Assurez-vous de personnaliser les sections avec les détails spécifiques de votre projet. Ajoutez des sections supplémentaires au besoin pour fournir plus d'informations aux utilisateurs du projet. Replacez `[Votre Nom]` par vos informations réelles.
