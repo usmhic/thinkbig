@@ -1,0 +1,5 @@
+Adafruit-DHT==1.4.0
+bigchaindb-driver==0.6.0
+python-dotenv==0.19.1
+fastapi==0.68.0
+uvicorn==0.15.0
