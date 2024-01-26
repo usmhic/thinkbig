@@ -22,7 +22,7 @@ def send_data(host, port, temperature, humidity):
 
 # Replace 'localhost' and 3000 with the appropriate server host and port
 server_host = 'localhost'
-server_port = 3001
+server_port = 3000
 
 while True:
     #Read Temp and Hum from DHT11
