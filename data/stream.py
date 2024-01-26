@@ -1,6 +1,10 @@
 import json
 import socket
 import time
+from time import sleep
+import Adafruit_DHT as dht
+
+DHT = 4
 
 def send_data(host, port, temperature, humidity):
     data = {
@@ -17,17 +21,22 @@ def send_data(host, port, temperature, humidity):
     except Exception as e:
         print(f"Error sending data: {str(e)}")
 
-if __name__ == "__main__":
-    # Replace 'localhost' and 3000 with the appropriate server host and port
-    server_host = 'localhost'
-    server_port = 3000
+# Replace 'localhost' and 3000 with the appropriate server host and port
+server_host = '141.94.78.58'
+server_port = 3000
 
-    while True:
-        # Replace these values with actual temperature and humidity data
-        temperature_value = 25
-        humidity_value = 50
+while True:
+    #Read Temp and Hum from DHT11
+    h,t = dht.read_retry(dht.DHT11, DHT)
+    #Print Temperature and Humidity on Shell window
+    print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(t,h))
+    sleep(3) #Wait 3 seconds and read again
 
-        send_data(server_host, server_port, temperature_value, humidity_value)
+    # Replace these values with actual temperature and humidity data
+    temperature_value = h
+    humidity_value = t
 
-        # Sleep for a while before sending the next data
-        time.sleep(5)
+    send_data(server_host, server_port, temperature_value, humidity_value)
+
+    # Sleep for a while before sending the next data
+    time.sleep(5)

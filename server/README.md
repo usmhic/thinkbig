@@ -1,32 +1,57 @@
-# Data Folder - ThinkBig Project
+# ThinkBig Server
 
-## Description
+## Overview
 
-Le dossier `data` dans le projet ThinkBig contient les scripts Python responsables de la collecte et du stockage des données provenant du capteur DHT11 sur le Raspberry Pi. Les données sont ensuite envoiyer via socket vers le serveur.
+ThinkBig Server consists of two main components: the TCP server (`netServer.js`) and the BigchainDB handler (`bigchainDBHandler.js`). The TCP server is responsible for receiving sensor data from clients, while the BigchainDB handler processes the received data and posts transactions to the BigchainDB blockchain.
 
-## Structure du Dossier
+## Getting Started
 
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the server directory:
+
+   ```bash
+   cd server
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## TCP Server (`netServer.js`)
+
+### Start the TCP Server
+
+Run the following command to start the TCP server:
+
+```bash
+node netServer.js
 ```
-thinkbig/
-|-- data/
-|   |-- main.py
-|   `-- ...
-`-- ...
-```
 
-## Scripts Python
+The server will listen on port 3000 by default. Adjust the port as needed.
 
-### `main.py`
+### Receive Sensor Data
 
-- Ce script récupère les données du capteur DHT11 (température et humidité) sur le Raspberry Pi.
-- Les données sont ensuite immédiatement stockées dans la base de données BigchainDB en utilisant le script `bcdb.py`.
+Clients can connect to the server and send sensor data. The server logs received data and passes it to the BigchainDB handler.
 
-## Configuration
+## BigchainDB Handler (`bigchainDBHandler.js`)
 
-- Assurez-vous que les dépendances sont installées en exécutant `pip install -r requirements.txt`.
-- Configurez les paramètres spécifiques dans le fichier `.env` pour définir le pin GPIO du capteur DHT11, l'intervalle de lecture, et l'URL de BigchainDB.
+### Configure BigchainDB Connection
 
-## Utilisation
+Open `bigchainDBHandler.js` and update the `API_PATH` variable with the correct BigchainDB server details.
 
-1. Exécutez `python main.py` pour lancer la collecte de données à partir du capteur DHT11.
-2. Les données sont stockées dans BigchainDB immédiatement après chaque lecture.
+### Handle Sensor Data
+
+The `handleSensorData` function processes sensor data, creates transactions, signs them, and posts them to BigchainDB.
+
+## Technologies Used
+
+- Node.js
+- TCP server for real-time data communication
+- BigchainDB for storing and retrieving data on the blockchain

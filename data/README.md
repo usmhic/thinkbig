@@ -1,32 +1,31 @@
-# Data Folder - ThinkBig Project
+# ThinkBig Data Stream
 
-## Description
+## Overview
 
-Le dossier `data` dans le projet ThinkBig contient les scripts Python responsables de la collecte et du stockage des données provenant du capteur DHT11 sur le Raspberry Pi. Les données sont ensuite envoiyer via socket vers le serveur.
+The Raspberry Pi Stream script is responsible for capturing temperature and humidity data using a DHT11 sensor and streaming it to the ThinkBig IoT Blockchain System server via a socket connection. This script runs continuously, periodically reading sensor data and sending it to the server for further processing.
 
-## Structure du Dossier
+## Prerequisites
 
-```
-thinkbig/
-|-- data/
-|   |-- main.py
-|   `-- ...
-`-- ...
-```
-
-## Scripts Python
-
-### `main.py`
-
-- Ce script récupère les données du capteur DHT11 (température et humidité) sur le Raspberry Pi.
-- Les données sont ensuite immédiatement stockées dans la base de données BigchainDB en utilisant le script `bcdb.py`.
+- Raspberry Pi with Adafruit_DHT library installed (`pip install Adafruit_DHT`)
+- Connection to a DHT11 sensor
+- Access to the ThinkBig IoT Blockchain System server
 
 ## Configuration
 
-- Assurez-vous que les dépendances sont installées en exécutant `pip install -r requirements.txt`.
-- Configurez les paramètres spécifiques dans le fichier `.env` pour définir le pin GPIO du capteur DHT11, l'intervalle de lecture, et l'URL de BigchainDB.
+1. Open the `stream.py` script.
+2. Update the `server_host` and `server_port` variables with the appropriate server details.
+3. Ensure the correct pin for the DHT11 sensor is set in the `DHT` variable.
 
-## Utilisation
+## Usage
 
-1. Exécutez `python main.py` pour lancer la collecte de données à partir du capteur DHT11.
-2. Les données sont stockées dans BigchainDB immédiatement après chaque lecture.
+Run the script on your Raspberry Pi using the following command:
+
+```bash
+python stream.py
+```
+
+The script will continuously read temperature and humidity data from the DHT11 sensor, print it to the console, and send it to the ThinkBig server.
+
+## Customize Sending Interval
+
+Adjust the sleep duration (`time.sleep(5)`) at the end of the script to control the interval between data transmissions.
