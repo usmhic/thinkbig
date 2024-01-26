@@ -2,7 +2,7 @@
 
 ## Overview
 
-ThinkBig Server consists of two main components: the TCP server (`netServer.js`) and the BigchainDB handler (`bigchainDBHandler.js`). The TCP server is responsible for receiving sensor data from clients, while the BigchainDB handler processes the received data and posts transactions to the BigchainDB blockchain.
+ThinkBig Server consists of two main components: the TCP server (`server.js`) and the BigchainDB handler (`bigchainDBHandler.js`). The TCP server is responsible for receiving sensor data from clients, while the BigchainDB handler processes the received data and posts transactions to the BigchainDB blockchain.
 
 ## Getting Started
 
@@ -24,14 +24,14 @@ ThinkBig Server consists of two main components: the TCP server (`netServer.js`)
    npm install
    ```
 
-## TCP Server (`netServer.js`)
+## TCP Server (`server.js`)
 
 ### Start the TCP Server
 
 Run the following command to start the TCP server:
 
 ```bash
-node netServer.js
+node server.js
 ```
 
 The server will listen on port 3000 by default. Adjust the port as needed.

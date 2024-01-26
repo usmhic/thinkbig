@@ -21,7 +21,7 @@ def send_data(host, port, temperature, humidity):
         print(f"Error sending data: {str(e)}")
 
 # Replace 'localhost' and 3000 with the appropriate server host and port
-server_host = 'localhost'
+server_host = '141.94.78.58'
 server_port = 3000
 
 while True:
