@@ -1,8 +1,11 @@
-// bigchainDBHandler.js
 const driver = require('bigchaindb-driver');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env file
+dotenv.config();
 
 // BigchainDB server instance or test network
-const API_PATH = 'http://141.94.78.58:9984/api/v1/';
+const API_PATH = process.env.BIGCHAINDB_SERVER || 'http://localhost:9984/api/v1/';
 
 // Create a new keypair for the BigchainDB owner
 const ownerKeypair = new driver.Ed25519Keypair();

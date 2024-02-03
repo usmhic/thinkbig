@@ -13,7 +13,7 @@ The Raspberry Pi Stream script is responsible for capturing temperature and humi
 ## Configuration
 
 1. Open the `stream.py` script.
-2. Update the `server_host` and `server_port` variables with the appropriate server details.
+2. Update .env `server_host` and `server_port` variables with the appropriate server details.
 3. Ensure the correct pin for the DHT11 sensor is set in the `DHT` variable.
 
 ## Usage
