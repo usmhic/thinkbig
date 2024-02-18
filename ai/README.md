@@ -71,4 +71,7 @@ plt.show()
 ```
 
 The red line represents the regression line predicted by our model. Anomalies, such as the imposter temperature value at timestamp 10, can be detected by observing deviations from this line.
+
+![Regression Plot](result.png)
+
 ```
