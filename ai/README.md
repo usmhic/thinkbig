@@ -2,7 +2,7 @@
 
 ## Introduction
 
-ThinkBig is a decentralized weather monitoring system where anyone can contribute data. However, with open data contributions, there's a risk of receiving fake or erroneous data. In this notebook, we'll explore how to utilize linear regression to detect and potentially remove fraudulent or anomalous data points from the ThinkBig dataset.
+ThinkBig goal is to become a global decentralized weather monitoring system where anyone can contribute data. However, with open data contributions, there's a risk of receiving fake or erroneous data. In this notebook, we'll explore how to utilize linear regression to detect and potentially remove fraudulent or anomalous data points from the ThinkBig dataset.
 
 Our goal is to build a simple linear regression model that can learn from the data contributed to the ThinkBig and identify anomalies, helping to maintain the integrity of the dataset.
 
